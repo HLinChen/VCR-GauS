@@ -1,0 +1,51 @@
+_parent_: configs/config_base.yaml
+
+
+model:
+    load_mask: False
+    use_decoupled_appearance: False
+    use_decoupled_dnormal: False
+    ch_sem_feat: 2
+    num_cls: 2
+    depth_type: 'intersection'
+optim:
+    mask_depth_thr: 0.8
+    edge_thr: 0
+    exp_t: 0.01
+    cos_thr: -1
+    close_depth_from_iter: 0
+    normal_from_iter: 0
+    dnormal_from_iter: 0
+    consistent_normal_from_iter: 0
+    curv_from_iter: 0
+    loss_weight:
+        l1: 0.8
+        ssim: 0.2
+        l1_scale: 1
+        entropy: 0
+        depth_var: 0.
+        mono_depth: 0
+        mono_normal: 0.01
+        depth_normal: 0.01
+        consistent_normal: 0
+    prune:
+        iterations: [15000, 25000]
+        percent: 0.5
+        decay: 0.6
+        v_pow: 0.1
+    densify_large:
+        percent_dense: 2e-3
+        interval: 1
+        sample_cams:
+            random: True
+            num: 200
+            up: True
+            around: True
+            look_mode: 'target'
+    random_background: True
+
+
+train:
+    checkpoint_iterations: []
+    save_mesh: False
+    save_iterations: [30000]

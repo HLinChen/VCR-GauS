@@ -1,0 +1,84 @@
+[tool.black]
+line-length = 240
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vcr-gaus"
+version = "0.0.0.dev0"
+description = "VCR-GauS: View Consistent Depth-Normal Regularizer for Gaussian Surface Reconstruction"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+[project.optional-dependencies]
+
+f1eval = [
+    "open3d==0.10.0",
+    "numpy"
+]
+
+train = [
+    "torch==2.0.1",
+    "torchvision==0.15.2",
+    "torchaudio==2.0.2",
+    "numpy==1.26.1",
+    "open3d",
+    "plyfile",
+    "ninja",
+    "GPUtil",
+    "opencv-python",
+    "lpips",
+    "trimesh",
+    "pymeshlab",
+    "termcolor",
+    "wandb",
+    "imageio",
+    "scikit-image",
+    "torchmetrics",
+    "mediapy",
+]
+
+[project.urls]
+"Homepage" = "https://hlinchen.github.io/projects/VCR-GauS/"
+"Bug Tracker" = "https://github.com/HLinChen/VCR-GauS/issues"
+
+[tool.setuptools.packages.find]
+include = ["vcr*", "trl*"]
+exclude = [
+    "assets*",
+    "benchmark*",
+    "docs",
+    "dist*",
+    "playground*",
+    "scripts*",
+    "tests*",
+    "checkpoints*",
+    "project_checkpoints*",
+    "debug_checkpoints*",
+    "mlx_configs*",
+    "wandb*",
+    "notebooks*",
+]
+
+[tool.wheel]
+exclude = [
+    "assets*",
+    "benchmark*",
+    "docs",
+    "dist*",
+    "playground*",
+    "scripts*",
+    "tests*",
+    "checkpoints*",
+    "project_checkpoints*",
+    "debug_checkpoints*",
+    "mlx_configs*",
+    "wandb*",
+    "notebooks*",
+]

@@ -1,0 +1,29 @@
+_parent_: configs/reconstruct.yaml
+
+model:
+    use_decoupled_appearance: False
+    use_decoupled_dnormal: False
+    normal_folder: 'normal_npz_indoor'
+    eval: False
+
+optim:
+    exp_t: 0.01
+    mask_depth_thr: 0
+    loss_weight:
+        l1_scale: 0.5
+    consistent_normal_from_iter: 15000
+    close_depth_from_iter: 15000
+    densify_large:
+        percent_dense: 1e-2
+        sample_cams:
+            random: False
+            num: 30
+    loss_weight:
+        semantic: 0
+        depth_normal: 0
+        mono_normal: 0.01
+        consistent_normal: 0.05
+        distortion: 1000
+        depth_var: 0
+    random_background: False
+        

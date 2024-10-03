@@ -1,0 +1,14 @@
+_parent_: configs/tnt/base.yaml
+
+optim:
+    exp_t: 1e-3
+    mask_depth_thr: 0
+    densify_large:
+        percent_dense: 5e-3
+        sample_cams:
+            random: False
+    loss_weight:
+        semantic: 0
+model:
+    num_cls: 3
+    use_decoupled_appearance: False

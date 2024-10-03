@@ -1,0 +1,93 @@
+logdir: "/your/log/path/debug/"
+ip: 127.0.0.1
+port: -1
+detect_anomaly: False
+silent: 0
+seed: 0
+
+model:
+    sh_degree: 3
+    source_path: "/your/data/path/tnt/Barn/"
+    model_path: "/your/log/path/"
+    images: "images"
+    resolution: -1
+    white_background: False
+    data_device: "cuda"
+    eval: False
+    llffhold: 1
+    init_ply: "sparse/points3D.ply"
+    max_init_points:
+    split: False
+    sphere: False
+    load_depth: False
+    load_normal: False
+    load_mask: False
+    normal_folder: 'normals'
+    depth_folder: 'depths'
+    use_decoupled_appearance: False
+    ch_sem_feat: 0
+    num_cls: 0
+    max_mem: 22
+    load_mask: False
+    use_decoupled_appearance: False
+    use_decoupled_dnormal: False
+    ratio: 0
+    mesh:
+        voxel_size: 3e-3
+    depth_type: 'traditional'
+
+optim:
+    iterations: 30000
+    position_lr_init: 0.00016
+    position_lr_final: 0.0000016
+    position_lr_delay_mult: 0.01
+    position_lr_max_steps: 30000
+    feature_lr: 0.0025
+    sdf_lr: 0.001
+    weight_decay: 1e-2
+    opacity_lr: 0.05
+    scaling_lr: 0.005
+    rotation_lr: 0.001
+    appearance_embeddings_lr: 0.001
+    appearance_network_lr: 0.001
+    cls_lr: 5e-4
+    percent_dense: 0.01
+    densification_interval: 100
+    opacity_reset_interval: 3000
+    densify_from_iter: 500
+    densify_until_iter: 15000
+    densify_grad_threshold: 0.0005
+    random_background: False
+    rand_pts: 20000
+    edge_thr: 0
+    mask_depth_thr: 0
+    loss_weight:
+        l1: 0.8
+        ssim: 0.2
+        distortion: 0.
+        semantic: 0
+        mono_depth: 0
+        mono_normal: 0
+        depth_normal: 0
+    prune:
+        iterations: []
+        percent: 0.5
+        decay: 0.6
+        v_pow: 0.1
+
+pipline:
+    convert_SHs_python: False
+    compute_cov3D_python: False
+    debug: False
+    
+data:
+    name: dummy
+
+train:
+    test_iterations: [7000, 30000]
+    save_iterations: [7000, 30000]
+    checkpoint_iterations: [30000]
+    save_splat: False
+    start_checkpoint: 
+    debug_from: -1
+

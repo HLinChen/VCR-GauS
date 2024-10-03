@@ -1,0 +1,14 @@
+_parent_: configs/reconstruct.yaml
+
+model:
+    use_decoupled_appearance: True
+    use_decoupled_dnormal: False
+    eval: False
+    llffhold: 5
+
+optim:
+    exp_t: 5e-3
+    loss_weight:
+        depth_normal: 0.015
+        semantic: 0.005
+        l1_scale: 1

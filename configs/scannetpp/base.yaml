@@ -1,0 +1,20 @@
+_parent_: configs/reconstruct.yaml
+
+model:
+    split: True
+    eval: True
+    use_decoupled_appearance: False
+    use_decoupled_dnormal: False
+    mesh:
+        voxel_size: 1.5e-2
+
+optim:
+    mask_depth_thr: 0
+    curv_from_iter: 15000
+    densify_large:
+        percent_dense: 1e-2
+        sample_cams:
+            random: False
+    loss_weight:
+        semantic: 0
+        curv: 0.05

@@ -1,0 +1,17 @@
+_parent_: configs/reconstruct.yaml
+
+model:
+    eval: True
+    llffhold: 8
+    split: False
+
+optim:
+    mask_depth_thr: 1
+    densify_large:
+        percent_dense: 5e-2
+        sample_cams:
+            random: False
+            num: 100
+    loss_weight:
+        semantic: 0
+        l1_scale: 1

@@ -237,13 +237,13 @@ def readColmapSceneInfo(path, images, eval, llffhold=8, ratio=0, split=False, lo
             except:
                 xyz, rgb, _ = read_points3D_text(txt_path)
             xyz, rgb = filter_point_cloud(trans, scale, xyz, rgb)
-            storePly(ply_path, xyz, rgb)
-        try:
-            pcd = fetchPly(ply_path)
-        except:
-            pcd = None
+        #     storePly(ply_path, xyz, rgb)
+        # try:
+        #     pcd = fetchPly(ply_path)
+        # except:
+        #     pcd = None
         
-        trans, scale, bounding_box = bound_by_points(pcd.points)
+        trans, scale, bounding_box = bound_by_points(xyz)
         meta = {
             'trans': trans.tolist(),
             'scale': scale.tolist()

@@ -317,10 +317,11 @@ def bb_camera(n, trans, scale, height=None, target=None, opengl=False, up=True, 
     scale = check_tensor(scale)
     device = trans.device
     
-    up_axis, up_sign = find_axis(trans[:3, :3], axis_name='up')
+    rot = trans[:3, :3] if trans.ndim == 2 else torch.eye(3, device=device)
+    up_axis, up_sign = find_axis(rot, axis_name='up')
     if sample_mode == 'grid' or (up and around):
-        right_axis, right_sign = find_axis(trans[:3, :3], axis_name='right')
-        front_axis, front_sign = find_axis(trans[:3, :3], axis_name='front')
+        right_axis, right_sign = find_axis(rot, axis_name='right')
+        front_axis, front_sign = find_axis(rot, axis_name='front')
     v_axis = [i for i in [0, 1, 2] if i != up_axis]
     
     up_n = around_n = n

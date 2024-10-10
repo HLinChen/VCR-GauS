@@ -317,6 +317,7 @@ def bb_camera(n, trans, scale, height=None, target=None, opengl=False, up=True, 
     scale = check_tensor(scale)
     device = trans.device
     
+    if scale.ndim == 0: scale = torch.ones(3, dtype=torch.float32, device=device) * scale
     rot = trans[:3, :3] if trans.ndim == 2 else torch.eye(3, device=device)
     up_axis, up_sign = find_axis(rot, axis_name='up')
     if sample_mode == 'grid' or (up and around):

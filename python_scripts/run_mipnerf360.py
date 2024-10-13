@@ -23,7 +23,6 @@ node = 0
 max_workers = 9
 be = node*max_workers
 excluded_gpus = set([])
-excluded_gpus = set([2,3])
 
 total_list = [
         "bicycle", "bonsai", "counter", "flowers", "garden", "stump", "treehill", "kitchen", "room"

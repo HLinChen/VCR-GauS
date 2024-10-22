@@ -213,6 +213,7 @@ If you find our code or paper useful, please cite
   journal   = {arXiv preprint arXiv:2406.05774},
   year      = {2024},
 }
+```
 
 If you the flatten 3D Gaussian useful, please kindly cite
 ```bibtex

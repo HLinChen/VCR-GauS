@@ -30,6 +30,7 @@ VCR-GauS formulates a novel multi-view D-Normal regularizer that enables full op
 
 # Updates
 
+* **[2024.10.31]**: We uploaded a new version to arXiv, adding theoretical proofs and visualization results for the D-Normal Regularizer.
 * **[2024.09.24]**: VCR-GauS is accepted to NeurIPS 2024.
 
 # Installation
@@ -215,7 +216,7 @@ If you find our code or paper useful, please cite
 }
 ```
 
-If you the flatten 3D Gaussian useful, please kindly cite
+If you find the flatten 3D Gaussian useful, please kindly cite
 ```bibtex
 @article{chen2023neusg,
   title={Neusg: Neural implicit surface reconstruction with 3d gaussian splatting guidance},

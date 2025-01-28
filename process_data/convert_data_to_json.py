@@ -213,7 +213,7 @@ def data_to_json(args):
         raise TypeError("Unknown scene type")
 
     # export json file
-    export_to_json(list(center), scale, os.path.join(args.data_dir, "meta.json"))
+    export_to_json(list(center), scale, args.data_dir, "meta.json")
     print("Writing data to json file: ", os.path.join(args.data_dir, "meta.json"))
     return
 

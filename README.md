@@ -48,6 +48,7 @@ pip install -e ".[train]"
 export CUDA_HOME=/usr/local/cuda-11.8
 pip install -r requirements.txt
 ```
+We also uploaded a built anaconda environment [here](https://huggingface.co/hanlin-chen/VCR-GauS/resolve/main/vcr.zip?download=true); you can download it and unzip and put it in your_anaconda_path/envs/ .
 
 For eval TNT with the official scripts, you need to build a new environment with open3d==0.10:
 ```
@@ -76,7 +77,7 @@ Similar to Gaussian Splatting, we also use colmap to process data and you can fo
 
 
 ## Tanks and Temples dataset
-You can download the proprocessed Tanks and Temples dataset from [here](https://huggingface.co/Chiller3/VCR-GauS/resolve/main/tnt.zip?download=true). Or proprocess it by your self:
+You can download the proprocessed Tanks and Temples dataset from [here](https://huggingface.co/hanlin-chen/VCR-GauS/resolve/main/tnt.zip?download=true). Or proprocess it by your self:
 Download the data from [Tanks and Temples](https://tanksandtemples.org/download/) website.
 You will also need to download additional [COLMAP/camera/alignment](https://drive.google.com/file/d/1jAr3IDvhVmmYeDWi0D_JfgiHcl70rzVE/view?resourcekey=) and the images of each scene.  
 The file structure should look like (you need to move the downloaded images to folder `images_raw`):
@@ -136,7 +137,7 @@ python python_scripts/run_mipnerf360.py
 ```
 
 ## Only eval the metrics
-We have uploaded the extracted meshes, you can download and eval them by yourselves ([TNT](https://huggingface.co/Chiller3/VCR-GauS/resolve/main/tnt_mesh.zip?download=true) and [DTU](https://huggingface.co/Chiller3/VCR-GauS/resolve/main/dtu_mesh.zip?download=true)). You might need to update the **mesh and data path** in the script accordingly. And set **do_train** and **do_extract_mesh** to be False.
+We have uploaded the extracted meshes, you can download and eval them by yourselves ([TNT](https://huggingface.co/hanlin-chen/VCR-GauS/resolve/main/tnt_mesh.zip?download=true) and [DTU](https://huggingface.co/Chiller3/VCR-GauS/resolve/main/dtu_mesh.zip?download=true)). You might need to update the **mesh and data path** in the script accordingly. And set **do_train** and **do_extract_mesh** to be False.
 
 ```
 # Tanks and Temples dataset
